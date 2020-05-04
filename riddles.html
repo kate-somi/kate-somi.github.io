@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Riddles</title>
+</head>
+<body>
+    <script>
+        var riddle1 = "What is full of holes but still holds water?"; // sponge
+        var correct1 = ["sponge", "a sponge"];
+        var riddle2 = "What becomes wetter the more it dries?"; // towel
+        var correct2 = ["towel", "a towel"];
+        var riddle3 = "Where can you find cities, towns, shops, and streets but no people?"; // map
+        var correct3 = ["map", "a map"];
+        var riddle4 = "What has a neck but no head?"; // bottle
+        var correct4 = ["bottle", "a bottle"];
+
+        var score = 0;
+
+        var riddles = [riddle1, riddle2, riddle3, riddle4];
+        var corrects = [correct1, correct2, correct3, correct4];
+
+        for (var i = 0; i < riddles.length; i++) {
+            var answer = prompt(riddles[i]);
+            answer = answer.toLowerCase();
+            if (answer == corrects[i][0] || answer == corrects[i][1]) {
+                alert("Spot on!")
+                score++;
+            } else {
+                alert("Oops!")
+            }
+        }
+        alert("Game over! Correct answers: " + score);
+
+    </script>
+</body>
+</html>
