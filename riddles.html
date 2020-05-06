@@ -1,27 +1,27 @@
+<meta charset="utf-8">
 <script>
-        var riddle1 = "What is full of holes but still holds water?"; // sponge
-        var correct1 = ["sponge", "a sponge"];
-        var riddle2 = "What becomes wetter the more it dries?"; // towel
-        var correct2 = ["towel", "a towel"];
-        var riddle3 = "Where can you find cities, towns, shops, and streets but no people?"; // map
-        var correct3 = ["map", "a map"];
-        var riddle4 = "What has a neck but no head?"; // bottle
-        var correct4 = ["bottle", "a bottle"];
 
+    function askQuestion(question, answers) {
         var score = 0;
-
-        var riddles = [riddle1, riddle2, riddle3, riddle4];
-        var corrects = [correct1, correct2, correct3, correct4];
-
-        for (var i = 0; i < riddles.length; i++) {
-            var answer = prompt(riddles[i]);
-            answer = answer.toLowerCase();
-            if (answer == corrects[i][0] || answer == corrects[i][1]) {
+        var userAnswer = prompt(question);
+        userAnswer = userAnswer.toLowerCase();
+        for (var i = 0; i < answers.length; i++) {
+            if (userAnswer == answers[i]) {
                 alert("Spot on!")
                 score++;
-            } else {
-                alert("Oops!")
+                return score;
             }
         }
-	alert("Game over! Correct answers: " + score);
+        alert("Oops!")
+        return score;
+    }
+
+    var score = 0;
+    score += askQuestion("What is full of holes but still holds water?", ["sponge", "a sponge", "the sponge"]);
+    score += askQuestion("What becomes wetter the more it dries?", ["towel", "a towel", "the towel"]);
+    score += askQuestion("Where can you find cities, towns, shops, and streets but no people?", ["map", "a map", "the map"]);
+    score += askQuestion("What has a neck but no head?", ["bottle", "a bottle", "the bottle"]);
+        
+    alert("Game over! Correct answers: " + score);
+
 </script>
