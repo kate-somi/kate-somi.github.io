@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var answer = parseInt(Math.random() * 100);
+
+	var playerNumber = 1;
+
+	while (true){
+		var userAnswer = prompt("Guess a number in range 0-100.\nIt's player " + playerNumber +"'s turn.\nPress Q to exit");
+		if (userAnswer == "q")
+			break;
+
+		userAnswer = parseInt(userAnswer);
+
+		if (userAnswer == answer) {
+			alert("Spot on! Player " + playerNumber + " wins! ");
+			break;
+			// continue; - to the next iteration
+		} else if (userAnswer > answer) {
+			alert("Too high! ");
+		} else if (userAnswer < answer) {
+			alert("Too low! ");
+		}
+
+		if (playerNumber == 1)
+			playerNumber = 2;
+		else
+			playerNumber = 1;
+
+	}
+	alert("Right answer: " + answer);
+</script>
